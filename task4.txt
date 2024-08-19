@@ -1,0 +1,38 @@
+ما هي الميزات الجديدة التي قدمتها (6ES (2015 ECMAScript في لغة JavaScript؟ قم
+بذكر أكبر عدد ممكن من هذه الميزات مع شرح موجز لكل ميزة.
+
+let: تعلن عن متغير يمكن إعادة تعيينه وتكون لها نطاق كتلة (block-scoped)، وهو بديل لـ var.
+const: تعلن عن متغير ثابت لا يمكن إعادة تعيينه، وأيضًا نطاقه كتلة.
+Template Literals: إدراج المتغيرات بسهولة باستخدام علامات backticks.
+Classes:لتعريف  في JavaScript.
+
+
+كيف يمكنك جلب البيانات من API بطرق مختلفة في JavaScript؟ اشرح ثالثة طرق مختلفة
+مع ذكر مثال لكل طريقة.
+
+fetch: هو طريقة مدمجة في JavaScript لجلب البيانات من API. يعمل على الوعود (Promises).
+EX:
+fetch('https://api.example.com/data')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+ Axios:مكتبة خارجية شائعة لتعامل مع HTTP، تسهل جلب البيانات وتوفير وظائف مثل الإلغاء والتحكم بالاستجابات.
+EX:
+axios.get('https://api.example.com/data')
+    .then(response => console.log(response.data))
+    .catch(error => console.error('Error:', error));
+Async/Await:
+يوفر async/await طريقة لكتابة عمليات غير متزامنة بطريقة تبدو متزامنة. يمكن استخدامه مع fetch أو axios.
+EX:
+async function getData() {
+    try {
+        const response = await fetch('https://api.example.com/data');
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+
+
